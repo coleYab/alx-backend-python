@@ -4,10 +4,12 @@ type annotation
 """
 
 
-from typing import *
+import typing
 
 
-def element_length(lst: Iterable[Sequence]) -> List[Tuple[Sequence, int]]:
+def element_length(
+        lst: typing.Iterable[typing.Sequence]
+    ) -> typing.List[typing.Tuple[typing.Sequence, int]]:
     """
     Type annotated functions for py
     """
