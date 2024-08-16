@@ -8,8 +8,8 @@ import typing
 
 
 def element_length(
-        lst: typing.Iterable[typing.Sequence]
-    ) -> typing.List[typing.Tuple[typing.Sequence, int]]:
+             lst: typing.Iterable[typing.Sequence]
+        ) -> typing.List[typing.Tuple[typing.Sequence, int]]:
     """
     Type annotated functions for py
     """
