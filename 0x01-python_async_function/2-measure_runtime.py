@@ -5,6 +5,8 @@ meansuring the runtime of the wait_n coroutene
 
 
 import asyncio
+import time
+import typing
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
@@ -15,5 +17,8 @@ def measure_time(n: int, max_wait: int) -> float:
         - n: total args.
         - max_wait: the maximum possible delay.
     """
-    wait_time = asyncio.run(wait_n(n, max_wait))
-    return sum(wait_time) / len(wait_time)
+    before = time.time()
+    asyncio.run(wait_n(n, max_wait))
+    after = time.time()
+
+    return (after - before) / n
