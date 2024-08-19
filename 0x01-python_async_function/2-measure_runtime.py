@@ -9,15 +9,14 @@ from time import perf_counter
 wait_n = __import__('1-concurrent_coroutines').wait_n
 
 
-def measure_time(n: int, max_wait: int) -> float:
+def measure_time(n: int, max_delay: int) -> float:
+    """Measure the total execution time of a function
+    Args:
+        n: the number of coroutines to launch
+        max_delay: the maximum amount of time to wait for each coroutine
+    Returns: elapsed time in seconds
     """
-    meansure_time function to meansure the total run time of a function.
-    args:
-        - n: total args.
-        - max_wait: the maximum possible delay.
-    """
-    before: float = perf_counter()
-    asyncio.run(wait_n(n, max_wait))
-    after: float = perf_counter()
-
-    return (after - before) / n
+    start = perf_counter()
+    asyncio.run(wait_n(n, max_delay))
+    elapsed = perf_counter() - start
+    return elapsed / n
