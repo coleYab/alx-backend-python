@@ -2,13 +2,11 @@
 """
 1.concrrent_coroutenes.py
 """
-
-
 import asyncio
 import typing
 
 
-wait_rand = __import__('0-basic_async_syntax').wait_random
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 
 async def wait_n(n: int, max_delay: int) -> typing.List[int]:
@@ -22,7 +20,7 @@ async def wait_n(n: int, max_delay: int) -> typing.List[int]:
     wait_t = []
 
     for i in range(n):
-        wait_t.append(await wait_rand(max_delay))
+        wait_t.append(await wait_random(max_delay))
         if len(wait_t) > 1:
             for i in range(len(wait_t) - 1, 0, -1):
                 if wait_t[i] < wait_t[i - 1]:
