@@ -17,8 +17,8 @@ def measure_time(n: int, max_wait: int) -> float:
         - n: total args.
         - max_wait: the maximum possible delay.
     """
-    before = time.time()
+    before: float = time.time()
     asyncio.run(wait_n(n, max_wait))
-    after = time.time()
+    after: float = time.time()
 
     return (after - before) / n
