@@ -11,8 +11,10 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 async def wait_n(n: int, max_delay: int) -> typing.List[float]:
     """
-    # wait_n
+    ## wait_n
+
     wait_n: waits up to max_delay for n times.
+
     args:
         @n: total count of max_delays
         @max_delay: the max possible dealy.
